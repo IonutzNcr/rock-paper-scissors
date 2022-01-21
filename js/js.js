@@ -7,32 +7,27 @@ function computerPlay(){
     else return 'paper'
 }
 
-//**Create playerScore & computerScore
-//**Ask the user to choose between rock paper scissors
-//**Change player selection  string into lowerCase 
-//**If player select  rock and computer scissor Display player won & playerScore +1
-//     Else if computer selected rock Display Draw
-//     Else if computer selected paper Display player loose & computerScore +1
-//**If player select paper and computer paper Display Draw
-//      Else if computer selected rock Display player Won & playerScore +1
-//      Else if computer selected scissors Display computer won & computerScore +1
-//**If player selected scissors and computer scissors Display draw
-//      Else if computer selected rock Display computer won & computerScore +1
-//      Else if computer selected paper Display player Won & playerScore +1
-//**Repeat the If process 5 times.
-//**Display the outcome each time
-
-
 function game(){
+    //**Create playerScore & computerScore
     let playerScore=0
     let computerScore=0
 
     function singleRound(playerSelection,computerSelection=computerPlay()){
+    //**Ask the user to choose between rock paper scissors
         playerSelection = prompt("Choose between rock paper and scissors")
+    //**Change player selection  string into lowerCase 
         playerSelection = playerSelection.toLowerCase()
         
         
-    
+    //**If player select  rock and computer scissor Display player won & playerScore +1
+    //     Else if computer selected rock Display Draw
+    //     Else if computer selected paper Display player loose & computerScore +1
+    //**If player select paper and computer paper Display Draw
+    //      Else if computer selected rock Display player Won & playerScore +1
+    //      Else if computer selected scissors Display computer won & computerScore +1
+    //**If player selected scissors and computer scissors Display draw
+    //      Else if computer selected rock Display computer won & computerScore +1
+    //      Else if computer selected paper Display player Won & playerScore +1
         if(playerSelection=="scissors"){
             if (computerSelection=="scissors"){
                 playerScore += 0
@@ -77,17 +72,18 @@ function game(){
         }
         }
     }
-    
+    //**Repeat the If process 5 times.
+    //**Display the outcome each time
     singleRound()
-    console.log(playerScore,computerScore)
+    console.log(`Player has ${playerScore} pt and Computer has ${computerScore} pt`)
     singleRound()
-    console.log(playerScore,computerScore)
+    console.log(`Player has ${playerScore} pt and Computer has ${computerScore} pt`)
     singleRound()
-    console.log(playerScore,computerScore)
+    console.log(`Player has ${playerScore} pt and Computer has ${computerScore} pt`)
     singleRound()
-    console.log(playerScore,computerScore)
+    console.log(`Player has ${playerScore} pt and Computer has ${computerScore} pt`)
     singleRound()
-    console.log(playerScore,computerScore)
+    console.log(`Player has ${playerScore} pt and Computer has ${computerScore} rpt`)
 
 //**Display the winner at the end
 //      If playerScore is higher than computerScore -> Player Won
