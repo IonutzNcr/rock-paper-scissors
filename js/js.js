@@ -92,6 +92,7 @@ function game(){
     singleRound()
     console.log(playerScore,computerScore)
     singleRound()
+    console.log(playerScore,computerScore)
 }
 
 game()
