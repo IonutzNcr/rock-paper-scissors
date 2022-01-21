@@ -21,28 +21,80 @@ function computerPlay(){
 
 
 function singleRound(playerSelection,computerSelection=computerPlay()){
-    
+    playerSelection = prompt("Choose between rock paper and scissors")
     playerSelection = playerSelection.toLowerCase()
 
+    
+
     if(playerSelection=="scissors"){
-        console.log(computerSelection)
-        if (computerSelection=="scissors") return "Draw"
-        else if (computerSelection=="rock") return "You lose! Rock beats Scissors"
-        else return "You win! Scissors beats Paper"
+        if (computerSelection=="scissors"){
+            playerScore += 0
+            computerScore += 0
+            console.log("Draw") 
+        } 
+        else if (computerSelection=="rock") {
+            playerScore += 0
+            computerScore += 1
+            console.log("You lose! Rock beats Scissors")
+        }
+        else{
+            playerScore += 1
+            computerScore += 0
+            console.log("You win! Scissors beats Paper")
+        } 
     }
     if(playerSelection=="paper"){
         if (computerSelection=="paper") return "Draw"
-        else if (computerSelection=="scissors") return "You lose! Scissors beats paper"
-        else return "You win! Paper beats Rock"
+        else if (computerSelection=="scissors"){
+            playerScore += 0
+            computerScore += 1
+            console.log("You lose! Scissors beats paper") 
+        } 
+        else {
+            playerScore += 1
+            computerScore += 0
+            console.log("You win! Paper beats Rock") 
+        }
     }
     if(playerSelection=="rock"){
         if (computerSelection=="rock") return "Draw"
-        else if (computerSelection=="paper") return "You lose! Paper beats rock"
-        else return "You win! Rock beats Scissors"
+        else if (computerSelection=="paper"){
+            playerScore += 0
+            computerScore += 1
+            console.log("You lose! Paper beats rock") 
+        } 
+        else {
+            playerScore += 1
+            computerScore += 0
+            console.log("You win! Rock beats Scissors") 
+    }
     }
 }
 
-console.log(singleRound("ROCK"))
+
+
+/*
+    Ask the user to choose between rock paper scissors
+    Repeat the singleRound 5 times.
+    Display the result of each round
+    Display the winner at the end
+    
+*/
+function game(){
+    let playerScore=0
+    let computerScore=0
+    singleRound()
+    console.log(playerScore,computerScore)
+    singleRound()
+    console.log(playerScore,computerScore)
+    singleRound()
+    console.log(playerScore,computerScore)
+    singleRound()
+    console.log(playerScore,computerScore)
+    singleRound()
+}
+
+game()
     
 
 
