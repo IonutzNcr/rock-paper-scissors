@@ -7,29 +7,22 @@ function computerPlay(){
     else return 'paper'
 }
 
-//**Player select between rock paper and scissor
+//**Create playerScore & computerScore
+//**Ask the user to choose between rock paper scissors
 //**Change player selection  string into lowerCase 
-//**If player select  rock and computer scissor Display player won
+//**If player select  rock and computer scissor Display player won & playerScore +1
 //     Else if computer selected rock Display Draw
-//     Else if computer selected paper Display player loose
+//     Else if computer selected paper Display player loose & computerScore +1
 //**If player select paper and computer paper Display Draw
-//      Else if computer selected rock Display player Won
-//      Else if computer selected scissors Display computer won
+//      Else if computer selected rock Display player Won & playerScore +1
+//      Else if computer selected scissors Display computer won & computerScore +1
 //**If player selected scissors and computer scissors Display draw
-//      Else if computer selected rock Display computer won
-//      Else if computer selected paper Display player Won
+//      Else if computer selected rock Display computer won & computerScore +1
+//      Else if computer selected paper Display player Won & playerScore +1
+//**Repeat the If process 5 times.
+//**Display the outcome each time
 
 
-
-
-
-/*
-    Ask the user to choose between rock paper scissors
-    Repeat the singleRound 5 times.
-    Display the result of each round
-    Display the winner at the end
-    
-*/
 function game(){
     let playerScore=0
     let computerScore=0
@@ -37,7 +30,7 @@ function game(){
     function singleRound(playerSelection,computerSelection=computerPlay()){
         playerSelection = prompt("Choose between rock paper and scissors")
         playerSelection = playerSelection.toLowerCase()
-        console.log(playerScore)
+        
         
     
         if(playerSelection=="scissors"){
@@ -95,6 +88,15 @@ function game(){
     console.log(playerScore,computerScore)
     singleRound()
     console.log(playerScore,computerScore)
+
+//**Display the winner at the end
+//      If playerScore is higher than computerScore -> Player Won
+//      Else if playerScore is lower than ComputerScore -> Computer Won
+//      Else It's a draw
+
+    if(playerScore>computerScore) console.log("Player Won")
+    else if(playerScore<computerScore) console.log("Computer Won")
+    else console.log('It\'s a draw')
 }
 
 game()
