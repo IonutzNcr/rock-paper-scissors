@@ -72,7 +72,7 @@ function game(){
         }
         }
     }
-    //**Repeat the If process 5 times.
+    //**Repeat the If algorithm  5 times.
     //**Display the outcome each time
     singleRound()
     console.log(`Player has ${playerScore} pt and Computer has ${computerScore} pt`)
