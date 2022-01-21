@@ -20,56 +20,6 @@ function computerPlay(){
 //      Else if computer selected paper Display player Won
 
 
-function singleRound(playerSelection,computerSelection=computerPlay()){
-    playerSelection = prompt("Choose between rock paper and scissors")
-    playerSelection = playerSelection.toLowerCase()
-
-    
-
-    if(playerSelection=="scissors"){
-        if (computerSelection=="scissors"){
-            playerScore += 0
-            computerScore += 0
-            console.log("Draw") 
-        } 
-        else if (computerSelection=="rock") {
-            playerScore += 0
-            computerScore += 1
-            console.log("You lose! Rock beats Scissors")
-        }
-        else{
-            playerScore += 1
-            computerScore += 0
-            console.log("You win! Scissors beats Paper")
-        } 
-    }
-    if(playerSelection=="paper"){
-        if (computerSelection=="paper") return "Draw"
-        else if (computerSelection=="scissors"){
-            playerScore += 0
-            computerScore += 1
-            console.log("You lose! Scissors beats paper") 
-        } 
-        else {
-            playerScore += 1
-            computerScore += 0
-            console.log("You win! Paper beats Rock") 
-        }
-    }
-    if(playerSelection=="rock"){
-        if (computerSelection=="rock") return "Draw"
-        else if (computerSelection=="paper"){
-            playerScore += 0
-            computerScore += 1
-            console.log("You lose! Paper beats rock") 
-        } 
-        else {
-            playerScore += 1
-            computerScore += 0
-            console.log("You win! Rock beats Scissors") 
-    }
-    }
-}
 
 
 
@@ -83,6 +33,58 @@ function singleRound(playerSelection,computerSelection=computerPlay()){
 function game(){
     let playerScore=0
     let computerScore=0
+
+    function singleRound(playerSelection,computerSelection=computerPlay()){
+        playerSelection = prompt("Choose between rock paper and scissors")
+        playerSelection = playerSelection.toLowerCase()
+        console.log(playerScore)
+        
+    
+        if(playerSelection=="scissors"){
+            if (computerSelection=="scissors"){
+                playerScore += 0
+                computerScore += 0
+                console.log("Draw") 
+            } 
+            else if (computerSelection=="rock") {
+                playerScore += 0
+                computerScore += 1
+                console.log("You lose! Rock beats Scissors")
+            }
+            else{
+                playerScore += 1
+                computerScore += 0
+                console.log("You win! Scissors beats Paper")
+            } 
+        }
+        if(playerSelection=="paper"){
+            if (computerSelection=="paper") console.log("Draw")
+            else if (computerSelection=="scissors"){
+                playerScore += 0
+                computerScore += 1
+                console.log("You lose! Scissors beats paper") 
+            } 
+            else {
+                playerScore += 1
+                computerScore += 0
+                console.log("You win! Paper beats Rock") 
+            }
+        }
+        if(playerSelection=="rock"){
+            if (computerSelection=="rock") console.log("Draw") 
+            else if (computerSelection=="paper"){
+                playerScore += 0
+                computerScore += 1
+                console.log("You lose! Paper beats rock") 
+            } 
+            else {
+                playerScore += 1
+                computerScore += 0
+                console.log("You win! Rock beats Scissors") 
+        }
+        }
+    }
+    
     singleRound()
     console.log(playerScore,computerScore)
     singleRound()
