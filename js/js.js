@@ -13,8 +13,10 @@ function game(){
     let computerScore=0;
 
     function singleRound(playerSelection,computerSelection=computerPlay()){
+
         playerSelection = this.textContent;
     
+        //Compare player & computer selection to choose the winner
         if(playerSelection=="scissors"){
             if (computerSelection=="scissors"){
                 displayWinner.textContent="Draw";
@@ -50,7 +52,10 @@ function game(){
                 displayWinner.textContent= "You win! Rock beats Scissors";
             }
         }
+        
+        //Display the score & reset the game
         displayScore.textContent = `PLAYER 1: ${playerScore}   COMPUTER: ${computerScore} `;
+
         if(playerScore === 5 && computerScore < 5){
             displayScore.textContent = "Player has reach 5 pts and Won";
             
@@ -65,7 +70,7 @@ function game(){
             
         } 
     }
-    
+    // DOM CREATION & MANIPULATION
     function createBtn(txt) {
         const btn = document.createElement("button");
         btn.textContent = txt;
