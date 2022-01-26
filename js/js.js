@@ -2,9 +2,9 @@
 //**Computer randomly select between rock paper and scissors
 function computerPlay(){
     let randomNumber = Math.floor(Math.random()*3)
-    if (randomNumber == 0) return 'scissors'
-    else if (randomNumber == 1) return 'rock'
-    else return 'paper'
+    if (randomNumber == 0) return 'scissors';
+    else if (randomNumber == 1) return 'rock';
+    else return 'paper';
 }
 //play rock paper scissors
 function game(){
@@ -55,48 +55,38 @@ function game(){
             displayScore.textContent = "Player has reach 5 pts and Won";
             
             playerScore = 0;
-            computerScore = 0
+            computerScore = 0;
             
         } 
         else if(computerScore == 5 && playerScore < 5){
             displayScore.textContent = "Computer Won";
             playerScore = 0;
-            computerScore = 0
+            computerScore = 0;
             
         } 
     }
     
-    
-    
-       
+    function createBtn(txt) {
+        const btn = document.createElement("button");
+        btn.textContent = txt;
+        document.querySelector("body").appendChild(btn);
+        btn.addEventListener("click",singleRound);
+    }   
 
-    const paper = document.createElement("button");
-    paper.textContent = "paper";
-    const scissors = document.createElement("button");
-    scissors.textContent = "scissors";
-    const rock = document.createElement("button");
-    rock.textContent = "rock";
-
-    document.querySelector("body").appendChild(paper);
-    document.querySelector("body").appendChild(scissors);
-    document.querySelector("body").appendChild(rock);
+    createBtn("paper");
+    createBtn("scissors");
+    createBtn("rock");
 
     const scoreContainer = document.createElement("div");
     document.querySelector("body").appendChild(scoreContainer);
-
+    
     const displayWinner = document.createElement("p");
     scoreContainer.appendChild(displayWinner);
     const displayScore = document.createElement("p");
-    scoreContainer.appendChild(displayScore);
-
-    paper.addEventListener("click",singleRound);
-    scissors.addEventListener("click",singleRound);
-    rock.addEventListener("click",singleRound);
-
+    scoreContainer.appendChild(displayScore);   
 }
 
-
-game()
+game();
     
 
 
