@@ -1,6 +1,8 @@
 # rock-paper-scissors
 You can see the code here : https://ionutzncr.github.io/rock-paper-scissors/
 
+Context: Play rock paper scissors again a computer. The first to reach 5 points win the game.
+
 Concepts in practice : 
 --DOM 
 --Scope
